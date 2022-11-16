@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
   res.status(200).send('200 OK');
 });
 
-router.get('/roll', function(req, res) {
+router.get('/roll/', function(req, res) {
   let sides = req.query.sides 
   let dice = req.query.dice
   let rolls = req.query.rolls
