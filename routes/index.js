@@ -5,8 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.statusCode(200);
-  res.send();
+  res.status(200).send('200 OK');
 });
 
 router.get('/roll', function(req, res) {
