@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
   res.status(200).send('200 OK');
 });
 
-router.get('/roll/', function(req, res) {
+router.get('/roll', function(req, res) {
   let sides = req.query.sides 
   let dice = req.query.dice
   let rolls = req.query.rolls
@@ -36,7 +36,7 @@ router.get('/roll/', function(req, res) {
   )
 });
 router.get('/roll/:sides', function(req, res) {
-  const sides = req.params.sides;
+  const sides = parseInt(req.params.sides);
   res.status(200).json(
     roll(
       sides,2,1
@@ -44,8 +44,8 @@ router.get('/roll/:sides', function(req, res) {
   )
 })
 router.get('/roll/:sides/:dice', function(req, res) {
-  const sides = req.params.sides;
-  const dice = req.params.dice;
+  const sides = parseInt(req.params.sides);
+  const dice = parseInt(req.params.dice);
   res.status(200).json(
     roll(
       sides,dice,1
@@ -53,9 +53,9 @@ router.get('/roll/:sides/:dice', function(req, res) {
   )
 })
 router.get('/roll/:sides/:dice/:rolls', function(req, res) {
-  const sides = req.params.sides;
-  const dice = req.params.dice;
-  const rolls = req.params.rolls;
+  const sides = parseInt(req.params.sides);
+  const dice = parseInt(req.params.dice);
+  const rolls = parseInt(req.params.rolls);
   res.status(200).json(
     roll(
       sides,dice,rolls
